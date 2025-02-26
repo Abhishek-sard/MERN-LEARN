@@ -1,0 +1,25 @@
+npm - node package manager( it help to run any time)
+npx - node package executer ( it help to run in one time)
+
+nodemon- it helps to run at any time with out any things (globally)
+
+
+modules :-
+core module - it download by server
+local modules - create by developers
+third part modules- npm 
+module means the export import
+
+
+////Express features/////
+
+express.js - helps to create API (it is framework of node.js)
+
+Routing: routes using HTTP methods (GET, POST, PUT, DELETES, )
+
+middleware: it helps to work in middle of task and functionality
+
+ideals for creating restful services with clean and organized code handle JSON and from data.
+
+npm i express ( helps to install the package in website);
+
