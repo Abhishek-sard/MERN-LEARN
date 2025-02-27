@@ -23,3 +23,11 @@ ideals for creating restful services with clean and organized code handle JSON a
 
 npm i express ( helps to install the package in website);
 
+routing is the API url
+
+Get methods help to display the data in output
+post methods help to create the data in output
+
+body-> json
+query->url
+param->dynamic value

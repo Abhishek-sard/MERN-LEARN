@@ -54,6 +54,7 @@
 let express=require("express")
 
 let app=express()
+app.use(express());
 
 app.get("/",(req, res)=>{
     res.send({status:1, msg: "home page API"})
@@ -65,5 +66,16 @@ app.get('/news', (req,res)=>{
 
 app.get('/about', (req,res)=>{
     res.send({status:3, msg: "hello abhishek sardar"})
+})
+
+app.get('/service', (req,res)=>{
+    res.send({status:4, msg: "this help to make the service section"})
+})
+
+
+app.post('/login', (req,res)=>{
+    res.send({status:5, msg:"this is the number"})
+    console.log(req.body)
+    res.send({status:1, msg:"this is computer" ,data:req.body})
 })
 app.listen("8000")
