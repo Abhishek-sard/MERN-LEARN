@@ -51,16 +51,20 @@
 // });
 
 
-let express = require("express")
+let express = require("express");
+const { checkToken } = require("./CheckTokenMiddleware");
 
 let app = express()
+console.log(process.env.MyToken)
 app.use(express());
+
+require(dotenv).config();
 
 app.get("/", (req, res) => {
     res.send({ status: 1, msg: "home page API" })
 })
-let token = "12345"
-let myPass = "12345"
+// let token = "12345"
+// let myPass = "12345"
 
 // let TokenCheck = (req, res, next) => {
 //     console.log(req.query.token)
@@ -102,7 +106,7 @@ let myPass = "12345"
 // })
 
 
-app.get('/news', (req, res) => {
+app.get('/news', checkToken,  (req, res) => {
     res.send({ status: 1, msg: "hello abhishek" })
 })
 
@@ -136,4 +140,4 @@ app.post("contact", (req, res) => {
         queryData: req.query
     })
 })
-app.listen("8000")
+app.listen(process.env.PORT || 5000)
