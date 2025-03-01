@@ -60,30 +60,47 @@ app.get("/", (req, res) => {
     res.send({ status: 1, msg: "home page API" })
 })
 let token = "12345"
+let myPass = "12345"
 
-let TokenCheck = (req, res, next) => {
-    console.log(req.query.token)
-    if (req.query.token == "" || req.query.token == undefined) {
-        return res.send(
-            {
-                status: 0,
-                msg: "please fill the toke"
-            }
-        )
-    }
+// let TokenCheck = (req, res, next) => {
+//     console.log(req.query.token)
+//     if (req.query.token == "" || req.query.token == undefined) {
+//         return res.send(
+//             {
+//                 status: 0,
+//                 msg: "please fill the toke"
+//             }
+//         )
+//     }
 
-    if (req.query.token != token) {
-        return res.send(
-            {
-                status: 0,
-                msg: "please fill the correct token to go"
-            }
-        )
-    }
-    next();
-}
+//     if (req.query.token != token) {
+//         return res.send(
+//             {
+//                 status: 0,
+//                 msg: "please fill the correct token to go"
+//             }
+//         )
+//     }
+//     next();
+// }
 
-app.use(TokenCheck)
+// app.use(TokenCheck)
+// app.use((req, res, next) => {
+//     if (req.query.pass == "" || req.query.pass == undefined) {
+//         return res.send({
+//             status: 0,
+//             msg: "please fill the password"
+//         })
+//     }
+
+//     if (req.query.pass != myPass) {
+//         return res.send({
+//             status: 0,
+//             msg: "please fill the correct password"
+//         })
+//     }
+// })
+
 
 app.get('/news', (req, res) => {
     res.send({ status: 1, msg: "hello abhishek" })
