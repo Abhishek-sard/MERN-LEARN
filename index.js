@@ -51,31 +51,72 @@
 // });
 
 
-let express=require("express")
+let express = require("express")
 
-let app=express()
+let app = express()
 app.use(express());
 
-app.get("/",(req, res)=>{
-    res.send({status:1, msg: "home page API"})
+app.get("/", (req, res) => {
+    res.send({ status: 1, msg: "home page API" })
+})
+let token = "12345"
+
+let TokenCheck = (req, res, next) => {
+    console.log(req.query.token)
+    if (req.query.token == "" || req.query.token == undefined) {
+        return res.send(
+            {
+                status: 0,
+                msg: "please fill the toke"
+            }
+        )
+    }
+
+    if (req.query.token != token) {
+        return res.send(
+            {
+                status: 0,
+                msg: "please fill the correct token to go"
+            }
+        )
+    }
+    next();
+}
+
+app.use(TokenCheck)
+
+app.get('/news', (req, res) => {
+    res.send({ status: 1, msg: "hello abhishek" })
 })
 
-app.get('/news', (req,res)=>{
-    res.send({status:1, msg: "hello abhishek"})
+app.get('/about', (req, res) => {
+    res.send({ status: 3, msg: "hello abhishek sardar" })
 })
 
-app.get('/about', (req,res)=>{
-    res.send({status:3, msg: "hello abhishek sardar"})
+app.get("/about/id", (req, res) => {
+    let currentID = req.params.id
+    res.send("this is id about")
 })
 
-app.get('/service', (req,res)=>{
-    res.send({status:4, msg: "this help to make the service section"})
+app.get('/service', (req, res) => {
+    res.send({ status: 4, msg: "this help to make the service section" })
 })
 
 
-app.post('/login', (req,res)=>{
-    res.send({status:5, msg:"this is the number"})
+app.post('/login', (req, res) => {
+    res.send({ status: 5, msg: "this is the number" })
     console.log(req.body)
-    res.send({status:1, msg:"this is computer" ,data:req.body})
+    res.send({ status: 1, msg: "this is computer", data: req.body })
+})
+
+app.post("contact", (req, res) => {
+    console.log(req.body)
+
+    res.status(200).json({
+        status: 1,
+        msg: "Contact detail",
+        bodyData: req.body,
+        queryData: req.query
+    })
 })
 app.listen("8000")

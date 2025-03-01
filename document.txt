@@ -17,7 +17,7 @@ express.js - helps to create API (it is framework of node.js)
 
 Routing: routes using HTTP methods (GET, POST, PUT, DELETES, )
 
-middleware: it helps to work in middle of task and functionality
+middleware: it helps to work in middle of task and functionality (check the token of request)
 
 ideals for creating restful services with clean and organized code handle JSON and from data.
 
@@ -31,3 +31,6 @@ post methods help to create the data in output
 body-> json
 query->url
 param->dynamic value
+
+request-: call client
+response-: call server
