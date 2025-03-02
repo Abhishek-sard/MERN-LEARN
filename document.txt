@@ -34,3 +34,18 @@ param->dynamic value
 
 request-: call client
 response-: call server
+
+
+----------MongoDbCompass --------
+it is the database of like sql where to stores the data
+some commands:-
+1. SHOW dbs (it's helps to show all the data of database)
+2. use 'database name' (it helps to create a database name :- like use Booking)
+3. db.createCollection("student) (it helps to create the table);
+4. db.student.drop() (its helps to delete the table);
+5. db.student.renameCollection("Students) (its help to rename the table name)
+6. cls (its helps to clean the mongosh)
+7. db.Students.insertOne({ "sName": "Abhishek sardar", 
+"sEmail": "sardarabhishek14@gmail.com"}) (its helps to create the entity);
+
+8. db.Students.insertMany([{ "name": "sujan", "id": "12"}, { "name": "Bishal", "id": "14"}]) (its help to create many entity)
