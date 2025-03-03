@@ -49,3 +49,6 @@ some commands:-
 "sEmail": "sardarabhishek14@gmail.com"}) (its helps to create the entity);
 
 8. db.Students.insertMany([{ "name": "sujan", "id": "12"}, { "name": "Bishal", "id": "14"}]) (its help to create many entity)
+9. db.Students.find().pretty()  ( its help to find the entity which we have created)
+10. db.Students.deleteone({_id:objectid: '12345678'})( it delete only one table)
+11. db.Students.updateOne({_id: objectID("12345678")}, {$set:{"Name"}: "akash", }) (tis help to update only one data of id )
